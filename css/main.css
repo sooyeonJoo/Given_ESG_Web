@@ -1,0 +1,68 @@
+/* 모든 헤더 부분은 모든 사이트가 같기 떄문에 여기다 넣음*/
+
+header {
+  background-color: #FFFFFF;
+  color: var(--txt-color1);
+  height: 130px;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  position: fixed;
+  top: 0;
+  justify-content: space-between; /* 사이드로 밀기 */
+  align-items: center; /* 높이 중앙 정렬 (flex box) */
+  border-bottom: 1.5px solid var(--txt-color1);
+  font-weight: bold;
+  font-size: 30px;
+  z-index: 100;
+}
+
+header .logo img {
+  padding-left: 50px;
+  width: 130px;
+  height: auto;
+}
+
+header nav {
+  padding-right: 50px;
+}
+
+header a {
+  text-decoration: none;
+  color: var(--txt-color1);
+}
+
+header a:hover {
+  color: var(--point-color1);
+}
+
+header ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+header ul li {
+  margin-right: 60px; /* 메뉴 간 여백 */
+  margin-top: 15px;
+}
+
+header ul li:last-child {
+  margin-left: 40px;
+  margin-right: 0px; 
+  margin-top: 0px;
+}
+
+header nav img { 
+  width: 50px;
+  display: block;
+  margin: 0 auto;
+}
+
+header nav ul li:last-child a:hover img {
+  content: url('src/img_mypage2.png'); 
+}
+
+
