@@ -1,0 +1,141 @@
+#money_wrap {
+  display: flex;
+  flex-direction: column;
+  margin: 180px 0 10px 0;
+  padding: 30px 0;
+  height: 100%;
+  width: 100%;
+  /*background-color: #EEEEEE;*/
+}
+
+.filter {
+  /* 필터 기능에 대한 스타일을 추가합니다. */
+  border: 2px solid black;
+  height: 200px;
+  margin: 0 50px 40px 50px;
+  width: auto;
+  border-radius: 10px;
+}
+
+.money_list {
+  border: 2px solid black;
+  margin: 0 50px;
+  /*width: calc(100% - 100px);*/
+  width: auto;
+  height: 100%;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 가로에 3개의 카드를 정렬합니다. */
+  grid-gap: 60px; /* 카드 사이의 간격을 설정합니다. */
+}
+
+.card {
+  border: 2px solid black;
+  /*background-color: #9efb82;  카드의 배경색을 설정합니다. */
+  border-radius: 10px; /* 둥근 테두리를 생성합니다. */
+  width: 100%;
+  height: 350px;
+  display: flex;
+  flex-direction: column;
+}
+
+.card .pic {
+  width: 100%;
+  height: 200px;
+  
+}
+
+.card .pic img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  
+}
+
+.card .txt {
+  /*margin-top: 10px;*/
+  padding: 10px 0 10px 20px;
+  width: auto;
+  height: 150px;
+  background-color: #fcfcfc;
+  border-radius: 0 0 10px 10px;
+}
+
+.card .txt p {
+  margin: 30px 0 0 0;
+  font-size: 20px;
+}
+
+.card .txt h1 {
+  font-size: 35px;
+}
+
+
+
+
+/* 모달 스타일 */
+.modal {
+  display: none; /* 초기에는 숨겨진 상태 */
+  position: fixed; /* 화면을 기준으로 위치 지정 */
+  z-index: 101; /* 다른 요소들보다 위에 표시 */
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto; /* 스크롤 가능 */
+  background-color: rgba(0, 0, 0, 0.4); /* 배경을 어둡게 */
+}
+
+.modal-content {
+  background-color: #fefefe;
+  position: fixed; /* 모달을 화면 기준으로 고정 */
+  top: 50%; /* 화면 세로 중앙에 위치 */
+  left: 50%; /* 화면 가로 중앙에 위치 */
+  transform: translate(-50%, -50%); /* 수직 및 수평으로 정확히 가운데로 이동 */
+  padding: 40px;
+  border: 1px solid #888;
+  width: 700px;
+  height: 600px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  overflow-y: auto;
+}
+
+/* 닫기 버튼 스타일 */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 35px;
+  font-weight: bold;
+  margin: 0;
+  padding: 0;
+}
+
+/* 닫기 버튼에 마우스 호버시 색상 변경 */
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal-image img{
+  width: 100%;
+  height: auto;
+  margin-top: 10px;
+}
+
+.button_area {
+  display: flex;
+  flex-direction: row;
+  margin-top: 15px;
+  width: auto;
+}
+
+.modal-title h1{
+  margin-bottom: 10px;
+  font-size: 45px;
+}
+
+.modal-txt p{
+  font-size: 20px;
+}
