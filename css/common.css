@@ -1,5 +1,5 @@
 @font-face {
-  font-family: "Noto Sans KR", sans-serif;
+  font-family: "Noto Sans KR", sans-serif;;
   font-style: normal;
   font-weight:400;
   src: url('../fonts/NotoSansKR-Regular.eot');
@@ -8,7 +8,7 @@
 }
 
 @font-face {
-  font-family: "Noto Sans KR", sans-serif;
+  font-family: "Noto Sans KR", sans-serif;;
   font-style: normal;
   font-weight:500;
   src: url('../fonts/NotoSansKR-Medium.eot');
@@ -17,33 +17,33 @@
 }
 
 @font-face {
-  font-family: "Nanum DaHaengCe" sans-serif;
+  font-family: "Nanum DaHaengCe", sans-serif;;
   font-style: normal;
   font-weight:300;
-  src: url('../fonts/NanumDaHaengCe.eot');
-  src: url('../fonts/NanumDaHaengCe.woff') format('woff'),
-    url('../fonts/NanumDaHaengCe.ttf') format('truetype');
+  src: url('../fonts/Nanum DaHaengCe.eot');
+  src: url('../fonts/Nanum DaHaengCe.woff') format('woff'),
+    url('../fonts/Nanum DaHaengCe.ttf') format('truetype');
 }
 
-
-
-/* 반응형, 모바일에서 모든요소의 패딩,선을 크기안에 포함시킴 */
+/* 반응형, 모바일에서 모든요소의 패딩, 선을 크기 안에 포함 */
 *,
 ::before,
 ::after {
-  /* padding, border값을 width값으로 포함시킴 */
+  /* padding, border 값을 width 값으로 포함 */
   box-sizing: border-box;
 }
 
 /* 컬러 변수 */
 :root {
-  --txt-color1: #341A12; /*글자용 : 갈색*/
-  --txt-color1: #000000; /*글자용 : 검은색*/
-  --point-color1: #AFD198; /*진한 녹색*/
-  --point-color2: #E8EFCF; /*연한 녹색*/
+  --color-br1: #341A12;
+  --color-br2: #DBA979;
+  --color-br3: #ECCA9C;
+  --color-gr1: #AFD198;
+  --color-gr2: #E8EFCF;
+  --color-pi: #F55050;
 }
 
-/* body에 들어갈수있는 모든태그의 여백빼기 */
+/* body에 들어갈 수 있는 모든 태그의 여백 제거 */
 html,
 body,
 div,
@@ -107,42 +107,18 @@ video {
   padding: 0;
 }
 
-/* html5추가 시멘틱엘리먼트를 익스하위버전에서 블럭으로 인식되도록함 */
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-menu,
-nav,
-section,
-main {
-  display: block;
-}
-
-/* 리스트 기호 빼기 */
+/* 리스트 기호 제거 */
 ol,
-ul,
-li {
+ul {
   list-style: none;
 }
 
-/* button태그에 손모양 커서 */
+/* button 태그에 손 모양 커서 */
 button {
   cursor: pointer;
 }
 
-/* 익스하위버전에서 이미지 선없애기 */
-fieldset,
-img {
-  border: 0;
-  vertical-align: top;
-}
-
-/* 굵기 빼고 폰트크기를 body 폰트크기와 일치시킴 
+/* 굵기를 뺀 폰트 크기를 body 폰트 크기와 동일시 */
 h1,
 h2,
 h3,
@@ -151,38 +127,9 @@ h5,
 h6 {
   font-weight: normal;
   font-size: 100%;
-}  */
+}
 
 /* textarea 리사이즈 막기 */
 textarea {
   resize: none;
 }
-
-
-/* 모바일 크롬, 사파리 텍스트 자동확대 방지 */
-body {
-  -webkit-text-size-adjust: none;
-}
-
-
-/*********************** 공통스타일 *************************/
-/* 이 부분은 버튼의 크기나 스타일, 폼의 스타일을 모든 페이지마다 동일하게 적용할 수 있도록 하는 공간*/
-
-button {
-  border: none;
-  border-radius: 20px; /* 원형 모양을 위한 값 */
-  background-color: var(--point-color2); /* 버튼 텍스트 색상 */
-  padding: 8px 16px; /* 버튼 내부 여백 */
-  margin-right: 20px; /* 버튼 사이의 간격 조절 */
-  font-family: Nanum DaHaengCe;
-  font-size: 20px;
-  text-align: center;
-}
-
-/*
-button:hover {
-  background-color: var(--point-color1); 
-  color: #000000; 
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); 
-}
-*/
