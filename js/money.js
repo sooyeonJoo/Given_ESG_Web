@@ -1,19 +1,19 @@
-// 모달 창 열기
-function openModal() {
-  var modal = document.getElementById("myModal");
+function openModal(modalId) {
+  var modal = document.getElementById(modalId);
   modal.style.display = "block";
 }
 
-// 모달 창 닫기
-function closeModal() {
-  var modal = document.getElementById("myModal");
+function closeModal(modalId) {
+  var modal = document.getElementById(modalId);
   modal.style.display = "none";
 }
 
-// 모달 영역 외부를 클릭하면 모달 닫기
+// 클릭하여 모달 외부를 클릭하면 닫기
 window.onclick = function(event) {
-  var modal = document.getElementById("myModal");
-  if (event.target == modal) {
-      closeModal();
+  var modals = document.getElementsByClassName('modal');
+  for (var i = 0; i < modals.length; i++) {
+      if (event.target == modals[i]) {
+          modals[i].style.display = "none";
+      }
   }
-};
+}

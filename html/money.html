@@ -27,26 +27,55 @@
           <div class="filter">
           </div>
           <div class="money_list">
-            <div class ="card" onclick="openModal()">
-                <div class="pic">
-                    <img src="../images/nowgive.png" alt="사진">
-                </div>
-                <div class="txt">
-                    <h1>곧장기부</h1>
-                    <h2>장바구니 100% 기부하기</h2>
-                    <div class="button_area">
-                      <li><button type="button">#소액기부</button></li>
-                      <li><button type="button">#아이들</button></li>
-                      <li><button type="button">#여성</button></li>
-                    </div>
-                </div>
-            </div>
-            <div class ="card" onclick="openModal()">
 
+            <div class ="card" onclick="openModal('modal1')">
+              <div class="pic">
+                  <img src="../images/nowgive.png" alt="사진">
+              </div>
+              <div class="txt">
+                  <div class="title">
+                    <li><p>곧장기부</p></li>
+                    <li><button type="button">#소액기부</button></li>
+                    <li><button type="button">#아이들</button></li>
+                    <li><button type="button">#여성</button></li>
+                  </div>
+                  <div class="sub-title">
+                    <p>장바구니 100% 기부하기</p>
+                  </div>
+              </div>
             </div>
-            <div class ="card" onclick="openModal()">
 
+            <div class ="card" onclick="openModal('modal2')">
+              <div class="pic">
+                <img src="../images/kakao1.png" alt="사진">
+              </div>
+              <div class="txt">
+                <div class="title">
+                  <li><p>카카오같이가치</p></li>
+                  <li><button type="button">#캠페인</button></li>
+                  <li><button type="button">#마음날씨</button></li>
+                </div>
+                <div class="sub-title">
+                  <p>사회공헌 같이 해봐요</p>
+                </div>
+              </div>
             </div>
+
+            <div class ="card" onclick="openModal('modal3')">
+              <div class="pic">
+                <img src="../images/국경없는 사회1.png" alt="사진">
+              </div>
+              <div class="txt">
+                <div class="title">
+                  <li><p>국경없는사회</p></li>
+                  <li><button type="button">#구조활동</button></li>
+                </div>
+                <div class="sub-title">
+                  <p>당신의 후원이 환자를 치료합니다.</p>
+                </div>
+              </div>
+            </div>
+
             <div class ="card" onclick="openModal()">
 
             </div>
@@ -83,9 +112,12 @@
       
     </footer>
 
-    <div id="myModal" class="modal">
+
+
+    <!--      모달 모음        -->
+    <div id="modal1" class="modal">
         <div class="modal-content">
-            <span class="close" onclick="closeModal()">&times;</span> <!--X표시-->
+            <span class="close" onclick="closeModal('modal1')">&times;</span> <!--X표시-->
             <div class="modal-title">
               <h1>곧장기부</h1>
             </div>
@@ -111,6 +143,96 @@
             </div>
         </div>
     </div>
+
+    <div id="modal2" class="modal">
+      <div class="modal-content">
+          <span class="close" onclick="closeModal('modal2')">&times;</span> <!--X표시-->
+          <div class="modal-title">
+            <h1>카카오같이가치</h1>
+          </div>
+          <div class="modal-image">
+            <img src="../images/kakao1.png">
+            <img src="../images/kakao2.png">
+          </div>
+          <div class="modal-txt">
+            <h2>#같이기부</h2>
+            <p>
+              응원이나 공유만 해도 카카오가 대신 기부합니다.
+              신뢰할 수 있는 파트너들과 함께 변화를 만듭니다.
+            </p>
+            <br>
+            <h2>#모두의 행동</h2>
+            <p>
+              우리 사회가 함께 해결해야 할 다양한 주제들을
+              같이 고민하고 함께 행동해보아요.
+            </p>
+            <br>
+            <h2>#마음날씨</h2>
+            <p>
+              모두의 행복을 연구하는 마음날씨
+              오늘 당신의 마음에 안부를 묻습니다.
+            </p>
+          </div>
+      </div>
+  </div>
+
+  <div id="modal2" class="modal">
+      <div class="modal-content">
+          <span class="close" onclick="closeModal('modal2')">&times;</span> <!--X표시-->
+          <div class="modal-title">
+            <h1>카카오같이가치</h1>
+          </div>
+          <div class="modal-image">
+            <img src="../images/kakao1.png">
+            <img src="../images/kakao2.png">
+          </div>
+          <div class="modal-txt">
+            <h2>#같이기부</h2>
+            <p>
+              응원이나 공유만 해도 카카오가 대신 기부합니다.
+              신뢰할 수 있는 파트너들과 함께 변화를 만듭니다.
+            </p>
+            <br>
+            <h2>#모두의 행동</h2>
+            <p>
+              우리 사회가 함께 해결해야 할 다양한 주제들을
+              같이 고민하고 함께 행동해보아요.
+            </p>
+            <br>
+            <h2>#마음날씨</h2>
+            <p>
+              모두의 행복을 연구하는 마음날씨
+              오늘 당신의 마음에 안부를 묻습니다.
+            </p>
+          </div>
+      </div>
+  </div>
+  <div id="modal3" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('modal3')">&times;</span> <!--X표시-->
+        <div class="modal-title">
+          <h1>국경없는 사회</h1>
+        </div>
+        <div class="modal-image">
+          <img src="../images/국경없는 사회1.png">
+        </div>
+        <div class="modal-txt">
+          <h2>#활동운영</h2>
+          <p>
+            국경없는의사회는 인종이나 종교, 성별, 정치적 성향에 관계 없이 오로지 사람들의 필요에만 기반해 지원을 제공합니다. 
+            국경없는의사회는 심각한 수준의 폭력, 주목 받지 못하는 위기, 
+            인도주의 활동을 방해하는 장애물을 목격했을 때, 이에 대해서 목소리를 높입니다.
+          </p>
+          <br>
+          <h2>#활동분야</h2>
+          <p>
+            국경없는의사회는 국제 인도주의 의료 구호 단체로 의료 지원을 받지 못하거나 
+            무력 분쟁, 전염성 질병, 영양실조, 자연재해 등으로 고통 받는 사람들을 위한 긴급 구호 활동을 하고 있습니다.
+          </p>
+        </div>
+    </div>
+  </div>
+
 
 </body>
 </html>
