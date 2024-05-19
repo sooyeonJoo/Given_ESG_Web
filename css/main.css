@@ -3,6 +3,11 @@ body {
   color: var(--color-br1);
 }
 
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
 header {
   background-color: #FFFFFF;
   height: 130px;
