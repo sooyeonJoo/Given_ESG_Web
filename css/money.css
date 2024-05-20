@@ -1,11 +1,29 @@
-main {
-  padding: 0 150px;
+.intro {
+  display: flex;
+  flex-direction: column;
+  margin-top: 130px;
+  /*background-color: #aaa;*/
+  text-align: center;
+  justify-content: center;
+  height: 150px;
+}
+
+.intro h1 {
+  /*font-family: "Noto Sans KR", sans-serif;;*/
+  font-size: 40px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.intro p {
+  font-size: 20px;
+  font-weight: 500;
 }
 
 #money_wrap {
   display: flex;
   flex-direction: column;
-  margin: 180px 0 10px 0;
+  margin: 0 0 10px 0;
   padding: 30px 0;
   height: 100%;
   width: 100%;
@@ -64,14 +82,18 @@ main {
   
 }
 
-.card .txt .title {
-  flex-direction: row;
-  display: flex;
+/*.card .txt .title {
   align-items: center;
-}
+}*/
 
 .card .txt .sub-title {
   margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.card .txt .tag{
+  display: flex;
+  flex-direction: row;
 }
 
 .card .txt .title p {
