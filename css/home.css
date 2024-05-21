@@ -55,13 +55,23 @@ h2 {
 }
 
 #esg {
-  background-color: #F9F9F9;
   margin-bottom: 30px;
   padding: 50px;
   width: auto;
   height: auto;
   display: flex;
   flex-direction: column;
+  position: relative;
+}
+
+#esg_background {
+  background-color: #F9F9F9;
+  width: calc(100vw - 50% + 600px);
+  margin-left: calc(-50vw + 50%);  height: 100%;
+  top: 0;
+  left: 0;
+  position: absolute;
+  z-index: -1;
 }
 
 .esg_title {
