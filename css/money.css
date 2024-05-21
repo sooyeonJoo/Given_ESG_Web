@@ -1,11 +1,12 @@
 .intro {
   display: flex;
   flex-direction: column;
-  margin-top: 130px;
-  /*background-color: #aaa;*/
+  margin: 180px 0 30px 0;
+  padding: 30px 0;
+  /* background-color: #aaa; */
   text-align: center;
   justify-content: center;
-  height: 150px;
+  height: auto;
 }
 
 .intro h1 {
@@ -31,7 +32,7 @@
 }
 
 .filter {
-  /* 필터 기능에 대한 스타일을 추가합니다. */
+  /* 필터 기능에 대한 스타일 추가 */
   border: 2px solid black;
   height: 200px;
   margin: 0 50px 40px 50px;
@@ -47,19 +48,19 @@
   height: 100%;
   /*padding: 20px;*/
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 가로에 3개의 카드를 정렬합니다. */
-  grid-gap: 20px; /* 카드 사이의 간격을 설정합니다. */
+  grid-template-columns: repeat(3, 1fr); /* 가로에 3개의 카드를 정렬 */
+  grid-gap: 20px; /* 카드 사이의 간격 설정 */
 }
 
 .card {
-  /*border: 2px solid black;*/
-  /*background-color: #9efb82;  카드의 배경색을 설정합니다. */
-  border-radius: 10px; /* 둥근 테두리를 생성합니다. */
+  border: 2px solid var(--color-br1);
+  /*background-color: #9efb82;  카드 배경색 설정 */
+  border-radius: 10px;
   width: 100%;
-  height: 280px;
+  height: 330px;
   display: flex;
   flex-direction: column;
-  margin: 0 0 80px 0;
+  margin: 0 0 30px 0;
 }
 
 .card .pic {
@@ -71,24 +72,21 @@
   width: 100%;
   height: 200px;
   border-radius: 10px;
-  
 }
 
 .card .txt {
-  margin-top: 10px;
+  margin: 13px 15px;
   width: auto;
   height: 50px;
-  /*background-color: #fcfcfc;*/
-  
+  /* background-color: #fcfcfc; */
 }
 
-/*.card .txt .title {
-  align-items: center;
-}*/
+.card .txt .title {
+  font-weight: bold;
+}
 
 .card .txt .sub-title {
-  margin-top: 5px;
-  margin-bottom: 5px;
+  margin-bottom: 15px;
 }
 
 .card .txt .tag{
@@ -140,7 +138,7 @@
 
 /* 닫기 버튼 스타일 */
 .close {
-  color: #aaa;
+  color: var(--color-br1);
   float: right;
   font-size: 35px;
   font-weight: bold;
@@ -151,7 +149,7 @@
 /* 닫기 버튼에 마우스 호버시 색상 변경 */
 .close:hover,
 .close:focus {
-  color: black;
+  color: var(--color-gr1);
   text-decoration: none;
   cursor: pointer;
 }
@@ -172,9 +170,11 @@
 .modal-title h1{
   margin-bottom: 10px;
   font-size: 45px;
+  font-weight: bold;
 }
 
 .modal-txt h2{
+  margin: 40px 0 5px 0;
   font-size: 30px;
 }
 
@@ -188,8 +188,8 @@ button {
   border-radius: 20px; /* 원형 모양을 위한 값 */
   background-color: var(--color-gr2); /* 버튼 텍스트 색상 */
   padding: 8px 16px; /* 버튼 내부 여백 */
-  margin-right: 20px; /* 버튼 사이의 간격 조절 */
-  font-family: Nanum DaHaengCe;
+  margin-right: 10px; /* 버튼 사이의 간격 조절 */
+  font-family: 'Nanum DaHaengCe';
   font-size: 15px;
   text-align: center;
 }
