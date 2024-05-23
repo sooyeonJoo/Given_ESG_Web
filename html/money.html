@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="../css/main.css">
   <link rel="stylesheet" href="../css/money.css">
   <script src="../js/money.js"></script>
+  <script src="https://kit.fontawesome.com/94a4c2cbc6.js" crossorigin="anonymous"></script>
 </head>
 <body>
   <header>
@@ -29,6 +30,33 @@
     </div>
     <div id="money_wrap">
       <div class="filter">
+        <form class="search-box" action="" method="get">
+          <input class="search-txt" type="text" placeholder="검색어를 입력하세요.">
+          <button class="search-button" type="submit">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
+        </form>
+        <div class="type">
+          <li><p>나라 &ensp;|</p></li>
+          <li><button type="button">국내</button></li>
+          <li><button type="button">해외</button></li>
+        </div>
+        <div class="type">
+          <li><p>대상 &ensp;|</p></li>
+          <li><button type="button">아동</button></li>
+          <li><button type="button">청소년</button></li>
+          <li><button type="button">여성</button></li>
+          <li><button type="button">노인</button></li>
+          <li><button type="button">장애인</button></li>
+        </div>
+        <div class="type">
+          <li><p>유형 &ensp;|</p></li>
+          <li><button type="button">물품</button></li>
+          <li><button type="button">소액</button></li>
+          <li><button type="button">일시</button></li>
+          <li><button type="button">정기</button></li>
+          <li><button type="button">결연</button></li>
+        </div>
       </div>
       <div class="money_list">
         <div class ="card" onclick="openModal('modal1')">
@@ -43,9 +71,9 @@
            <p>장바구니 100% 기부하기</p>
           </div>
           <div class="tag">
-            <li><button type="button">#소액기부</button></li>
-            <li><button type="button">#아이들</button></li>
-            <li><button type="button">#여성</button></li>
+            <li><button type="button">소액</button></li>
+            <li><button type="button">아이들</button></li>
+            <li><button type="button">여성</button></li>
           </div>
         </div>
       </div>
@@ -61,8 +89,8 @@
           <p>사회공헌 같이 해봐요</p>
         </div>
         <div class="tag">
-          <li><button type="button">#캠페인</button></li>
-          <li><button type="button">#마음날씨</button></li>
+          <li><button type="button">물품</button></li>
+          <li><button type="button">아이들</button></li>
         </div>
       </div>
     </div>
@@ -79,7 +107,7 @@
           <p>당신의 후원이 환자를 치료합니다.</p>
         </div>
         <div class="tag">
-          <li><button type="button">#구조활동</button></li>
+          <li><button type="button">해외</button></li>
         </div>
       </div>
     </div>
