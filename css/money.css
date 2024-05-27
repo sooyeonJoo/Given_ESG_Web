@@ -34,7 +34,7 @@
 .filter {
   /* 필터 기능에 대한 스타일 추가 */
   /* border: 2px solid black; */
-  height: 200px;
+  height: 250px;
   margin: 0 50px 60px 50px;
   width: auto;
   border-radius: 10px;
@@ -87,6 +87,12 @@
 .type li button {
   background-color: white;
   border: 1px solid var(--color-gr1)
+}
+
+
+/* 필터 버튼이 활성화되었을 때의 스타일 */
+.type .category.active {
+  background-color: var(--color-gr2); /* 원하는 배경 색으로 설정 */
 }
 
 .money_list {

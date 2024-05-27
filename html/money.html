@@ -37,25 +37,29 @@
           </button>
         </form>
         <div class="type">
+          <li><p>모두보기 &ensp;|</p></li>
+          <li><button type="button" class="category all" data-filter="*">모두</button></li>
+        </div>
+        <div class="type">
           <li><p>나라 &ensp;|</p></li>
-          <li><button type="button">국내</button></li>
-          <li><button type="button">해외</button></li>
+          <li><button type="button" class="category" data-filter="국내">국내</button></li>
+          <li><button type="button" class="category" data-filter="해외">해외</button></li>
         </div>
         <div class="type">
           <li><p>대상 &ensp;|</p></li>
-          <li><button type="button">아동</button></li>
-          <li><button type="button">청소년</button></li>
-          <li><button type="button">여성</button></li>
-          <li><button type="button">노인</button></li>
-          <li><button type="button">장애인</button></li>
+          <li><button type="button" class="category" data-filter="아동">아동</button></li>
+          <li><button type="button" class="category" data-filter="청소년">청소년</button></li>
+          <li><button type="button" class="category" data-filter="여성">여성</button></li>
+          <li><button type="button" class="category" data-filter="노인">노인</button></li>
+          <li><button type="button" class="category" data-filter="장애인">장애인</button></li>
         </div>
         <div class="type">
           <li><p>유형 &ensp;|</p></li>
-          <li><button type="button">물품</button></li>
-          <li><button type="button">소액</button></li>
-          <li><button type="button">일시</button></li>
-          <li><button type="button">정기</button></li>
-          <li><button type="button">결연</button></li>
+          <li><button type="button" class="category" data-filter="물품">물품</button></li>
+          <li><button type="button" class="category" data-filter="소액">소액</button></li>
+          <li><button type="button" class="category" data-filter="일시">일시</button></li>
+          <li><button type="button" class="category" data-filter="정기">정기</button></li>
+          <li><button type="button" class="category" data-filter="결연">결연</button></li>
         </div>
       </div>
       <div class="money_list">
@@ -71,9 +75,9 @@
            <p>장바구니 100% 기부하기</p>
           </div>
           <div class="tag">
-            <li><button type="button">소액</button></li>
-            <li><button type="button">아이들</button></li>
-            <li><button type="button">여성</button></li>
+            <li><button type="button" data-type="소액">소액</button></li>
+            <li><button type="button" data-type="아동">아동</button></li>
+            <li><button type="button" data-type="여성">여성</button></li>
           </div>
         </div>
       </div>
@@ -89,8 +93,8 @@
           <p>사회공헌 같이 해봐요</p>
         </div>
         <div class="tag">
-          <li><button type="button">물품</button></li>
-          <li><button type="button">아이들</button></li>
+          <li><button type="button" data-type="물품">물품</button></li>
+          <li><button type="button" data-type="아동">아동</button></li>
         </div>
       </div>
     </div>
@@ -107,29 +111,47 @@
           <p>당신의 후원이 환자를 치료합니다.</p>
         </div>
         <div class="tag">
-          <li><button type="button">해외</button></li>
+          <li><button type="button" data-type="해외">해외</button></li>
         </div>
       </div>
     </div>
 
-    <div class ="card" onclick="openModal()">
+    <div class ="card" onclick="openModal('modal4')">
+      <div class="pic">
+        <img src="../images/초록우산.jpg" alt="사진">
+      </div>
+      <div class="txt">
+        <div class="title">
+          <p>초록우산</p>
+        </div>
+        <div class="sub-title">
+          <p>언제나 어린이 곁에, 초록우산</p>
+        </div>
+        <div class="tag">
+          <li><button type="button" data-type="해외">아동</button></li>
+        </div>
+      </div>
     </div>
-    <div class ="card">
+
+    <div class ="card" onclick="openModal('modal5')">
+      <div class="pic">
+        <img src="../images/아름다운가게.png" alt="사진">
+      </div>
+      <div class="txt">
+        <div class="title">
+          <p>아름다운 가게</p>
+        </div>
+        <div class="sub-title">
+          <p>함께하는 나눔과 순환의 아름다운 세상 만들기</p>
+        </div>
+        <div class="tag">
+          <li><button type="button" data-type="국내">국내</button></li>
+          <li><button type="button" data-type="소액">소액</button></li>
+          <li><button type="button" data-type="물품">물품</button></li>
+        </div>
+      </div>
     </div>
-    <div class ="card">
-    </div>
-    <div class ="card">
-    </div>
-    <div class ="card">
-    </div>
-    <div class ="card">
-    </div>
-    <div class ="card">
-    </div>
-    <div class ="card">
-    </div>
-    <div class ="card">
-    </div>    
+    
   </main>
   <footer>
       
@@ -219,6 +241,59 @@
         <p>
           국경없는의사회는 국제 인도주의 의료 구호 단체로 의료 지원을 받지 못하거나 
           무력 분쟁, 전염성 질병, 영양실조, 자연재해 등으로 고통 받는 사람들을 위한 긴급 구호 활동을 하고 있습니다.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div id="modal4" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('modal4')">&times;</span> <!--X표시-->
+      <div class="modal-title">
+        <h1>초록우산</h1>
+      </div>
+      <div class="modal-image">
+        <img src="../images/초록우산.jpg">
+        <img src="../images/초록우산2.png">
+      </div>
+      <div class="modal-txt">
+        <h2>- 초록우산</h2>
+        <p>
+          아이들을 위해 존재하고 후원자가 있기에 성장합니다.
+          초록우산은 1948년부터 어린이들의 행복한 성장을 위해 언제나 어린이 곁에서 함께하는 아동복지전문기관입니다.
+          1948년 문을 연 초록우산은 전쟁고아 구호사업을 시작으로 1981년 민간 최초로 전국 불우아동결연사업을 운영하며 국내 아동복지를 선도해 왔습니다. 
+          1989년에는 국내 최초로 한국아동학대예방협회를 창립하여 아동학대 예방사업을 시작했으며, 2011년 아동 NPO최초로 아동복지연구소를 설립하고 
+          아동 친화적인 환경조성을 위한 전문적인 연구조사를 진행하고 있습니다.
+          어린이의 행복한 성장을 위해 돌봄, 자립, 교육, 건강 · 안전, 주거 등의 영역에서 복지사업을 강화해가고 있으며, 
+          법/제도 및 인식개선 캠페인 등 다양한 옹호활동을 통해 어린이의 권리가 보호, 존중, 실현되는 세상을 만들어 가기 위한 노력을 하고 있습니다.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div id="modal5" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('modal5')">&times;</span> <!--X표시-->
+      <div class="modal-title">
+        <h1>아름다운 가게</h1>
+      </div>
+      <div class="modal-image">
+        <img src="../images/아름다운가게.png">
+        <img src="../images/아름다운가게2.png">
+      </div>
+      <div class="modal-txt">
+        <h2>- 재사용 나눔가게</h2>
+        <p>
+          아름다운가게 재사용나눔가게는 시민 여러분과 함께 생활 속에서 자원 재순환과 나눔을 실천하기 위해 탄생한 공간입니다. 
+          2002년 1호점인 아름다운가게 안국점을 시작으로 현재 전국 16개 도시에 110여 개의 재사용나눔가게와 함께하고 있습니다. 
+          재사용나눔가게는 우리 사회의 아름다운 변화를 만들어내고자 하는 지역민들의 사랑방입니다.
+        </p>
+        <br>
+        <h2>- 업사이클링</h2>
+        <p>
+          '에코파티메아리'는 쓰임을 다한 소재에 새로운 쓰임을 더한 업사이클 디자인 브랜드로 기부되어 오는 ‘버려지는 것’들 중 
+          가죽, 의류, 기타 친환경적인 소재들을 발굴해 새로운 쓰임을 디자인하여 실용 적인 패션잡화 및 친환경 캠페인 제품들을 만듭니다.
+          이로 인해 환경에 대한 사람들의 관심을 유발하고 지구를 지키는 에코라이프스타일의 확산을 추구합니다.
         </p>
       </div>
     </div>
