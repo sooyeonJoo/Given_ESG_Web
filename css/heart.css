@@ -67,6 +67,12 @@
   color: #555; 
   text-align:left; 
 }
+
+.message_wrap .chat {
+  overflow-y: auto; /* 세로 스크롤이 필요한 경우 스크롤바 표시 */
+  max-height: 600px; 
+}
+
 .message_wrap .input { 
   position: absolute; 
   bottom: 0; 
@@ -78,13 +84,29 @@
   border-top: 1px solid var(--color-pi); 
 }
 .message_wrap .input > textarea { 
-  width: calc(100% - 20px); 
+  width: calc(100% - 50px); 
   height: 80px; 
   border:none; 
   box-sizing: border-box; 
 }
 
+.input{
+  display: flex;
+  flex-direction: row;
+}
+
+#sendButton {
+  border-radius: 20px;
+  margin-left: 10px;
+  cursor: pointer; /* 마우스 커서 포인터 모양 */
+}
+
+
 .format {display:none;}
+
+.treeElements img {
+  display: none;
+}
 
 .tree_img {
   /* border: 2px solid var(--color-br1); */
