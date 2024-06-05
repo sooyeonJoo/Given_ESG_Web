@@ -1,7 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
   const messageInput = document.getElementById('messageInput');
   const sendButton = document.getElementById('sendButton');
-  const clearButton = document.getElementById('clearButton'); // 초기화 버튼 요소
   const messageList = document.getElementById('messageList');
   const treeElements = document.querySelectorAll('.treeElements img');
 
@@ -39,7 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (messageText !== '') {
       const newMessage = createMessageElement(messageText);
       messageList.appendChild(newMessage);
-      messageList.scrollTop = messageList.scrollHeight; // 새 메시지가 보이도록 스크롤
+      messageList.scrollTop = messageList.scrollHeight; //스크롤
 
       messageInput.value = ''; // 입력 필드 초기화
 
