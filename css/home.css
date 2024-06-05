@@ -54,6 +54,27 @@ h2 {
   height: 600px;
 }
 
+/* 기본 상태일 때 */
+.ani, .ani_delay, .esg_circle {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* 화면에 나타날 때 */
+.ani.visible, .ani_delay.visible, .esg_circle.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.ani_delay[data-delay="0.3"] {
+  transition-delay: 0.3s;
+}
+
+.ani_delay[data-delay="0.6"] {
+  transition-delay: 0.6s;
+}
+
 #esg {
   margin-bottom: 30px;
   padding: 50px;
@@ -137,6 +158,53 @@ h2 {
 
 .circle_text p {
   font-size: 25px;
+}
+
+/* 기본 상태일 때 */
+.given_title, .square, .square2 {
+  opacity: 0;
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* 화면에 나타날 때 */
+.given_title.visible, .square.visible, .square2.visible {
+  opacity: 1;
+  transform: translateX(0) translateY(0);
+}
+
+.ani_delay[data-delay="0.3"] {
+  transition-delay: 0.3s;
+}
+
+.ani_delay[data-delay="0.6"] {
+  transition-delay: 0.6s;
+}
+
+/* 아래에서 위로 나타나는 애니메이션 */
+.given_title {
+  transform: translateY(20px);
+}
+
+.given_title.visible {
+  transform: translateY(0);
+}
+
+/* 왼쪽에서 오른쪽으로 나타나는 애니메이션 */
+.square {
+  transform: translateX(-50px);
+}
+
+.square.visible {
+  transform: translateX(0);
+}
+
+/* 오른쪽에서 왼쪽으로 나타나는 애니메이션 */
+.square2 {
+  transform: translateX(50px);
+}
+
+.square2.visible {
+  transform: translateX(0);
 }
 
 #given {
