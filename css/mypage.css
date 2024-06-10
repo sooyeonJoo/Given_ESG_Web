@@ -1,5 +1,4 @@
 #my {
-  /* background-color: #e49191; */
   margin: 180px 0 30px 0;
   padding: 30px 0;
   width: 100%;
@@ -8,7 +7,6 @@
 }
 
 .menu {
-  /* background-color: aliceblue; */
   margin-right: 50px;
   width: 250px;
   height: 100%;
@@ -20,7 +18,6 @@
 }
 
 .con {
-  /* background-color: azure; */
   width: 900px;
   height: auto;
 }
@@ -29,7 +26,7 @@
   background-color: var(--color-gr2);
   border-radius: 30px;
   margin-bottom: 50px;
-  width: 100%;
+  width: 900px;
   height: 220px;
   display: flex;
   align-items: center;
@@ -51,14 +48,12 @@
 }
 
 .list {
-  /* background-color: bisque; */
   width: 100%;
   height: 100%;
 }
 
 .list_menu {
   border-bottom: 1px solid var(--color-br1);
-  /* background-color: beige; */
   width: 100%;
   height: 80px;
   display: flex;
@@ -73,18 +68,18 @@
 
 .list_menu ul li {
   margin-right: 70px;
+  cursor: pointer;
 }
 
-.list_con {
-  /* background-color: azure; */
+.rece_con {
   padding: 30px;
   width: 100%;
-  height: 500px;
+  height: auto;
   display: flex;
 }
 
 .card {
-  background-color: beige;
+  border: 1px solid var(--color-br1);
   margin: 0 20px 20px 0;
   width: 260px;
   height: 180px;
@@ -95,9 +90,67 @@
 .card h3 {
   position: absolute;
   font-size: 30px;
-  font-weight: bold;
-  bottom: 20px;
+  bottom: 16px;
   right: 20px;
 }
 
-/*  flex-direction: column;
+.like_con {
+  padding: 30px;
+  width: 100%;
+  height: auto;
+  display: none;
+}
+
+.file {
+  border: solid 2px var(--color-gr1);
+  border-radius: 30px;
+  margin-bottom: 20px;
+  padding: 20px 40px;
+  width: 100%;
+  height: auto;
+}
+
+.file_titlecon {
+  display: flex;
+  justify-content: space-between;
+}
+
+.file h2 {
+  font-size: 36px;
+  font-weight: bold;
+}
+
+.toggle_btn {
+  margin-top: 5px;
+  width: 40px;
+  cursor: pointer;
+}
+
+.rotate {
+  transform: rotate(270deg);
+}
+
+.file_cardcon {
+  margin: 20px 0 5px 0;
+  display: none;
+}
+
+.visible {
+  display: flex;
+}
+
+.file_card {
+  border: 1px solid var(--color-br1);
+  margin-right: 20px;
+  width: 155px;
+  height: 105px;
+  display: flex;
+  position: relative;
+}
+
+.file_card h3 {
+  position: absolute;
+  font-size: 22px;
+  bottom: 12px;
+  right: 16px;
+}
