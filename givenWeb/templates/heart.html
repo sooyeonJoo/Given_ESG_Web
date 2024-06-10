@@ -3,28 +3,23 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../static/css/common.css" />
-    <link rel="stylesheet" href="../static/css/main.css" />
-    <link rel="stylesheet" href="../static/css/heart.css" />
     <title>Given</title>
+{% load static %}
+    <link rel="stylesheet" href="{% static 'css/common.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/main.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/heart.css' %}" />
+    <script src="{% static 'js/heart.js' %}"></script>
   </head>
   <body>
-    <script src="../static/js/heart.js"></script>
     <header>
       <div class="logo">
-        <a href="home.html"
-          ><img src="../static/images/logoK.png" alt="기븐 로고"
-        /></a>
+        <a href="{% url 'given_home' %}"><img src="{% static 'images/logoK.png' %}" alt="기븐 로고"/></a>
       </div>
       <nav>
         <ul>
-          <li><a href="heart.html">마음으로 기부하기</a></li>
-          <li><a href="money.html">돈으로 기부하기</a></li>
-          <li>
-            <a href="mypage.html"
-              ><img src="../static/images/mypage.png" alt="마이페이지 아이콘"
-            /></a>
-          </li>
+          <li><a href="{% url 'given_heart' %}">마음으로 기부하기</a></li>
+          <li><a href="{% url 'given_money' %}">돈으로 기부하기</a></li>
+          <li><a href="{% url 'given_mypage' %}"><img src="{% static 'images/mypage.png' %}" alt="마이페이지 아이콘"/></a></li>
         </ul>
       </nav>
     </header>
@@ -57,24 +52,24 @@
         <section class="tree_img">
           <img
             class="earth_half"
-            src="../static/images/earth_half.png"
+            src="{% static 'images/earth_half.png' %}"
             alt="지구"
           />
-          <img class="sun" src="../static/images/sun.png" alt="해" />
-          <img class="cloud" src="../static/images/cloud.png" alt="구름" />
-          <img class="cloud2" src="../static/images/cloud.png" alt="구름" />
+          <img class="sun" src="{% static 'images/sun.png' %}" alt="해" />
+          <img class="cloud" src="{% static 'images/cloud.png' %}" alt="구름" />
+          <img class="cloud2" src="{% static 'images/cloud.png' %}" alt="구름" />
 
           <div class="treeElements">
-            <img class="tree" src="../static/images/treeA_1.png" alt="나무" />
-            <img class="tree2" src="../static/images/treeB_2.png" alt="나무" />
-            <img class="tree3" src="../static/images/treeA_1.png" alt="나무" />
-            <img class="tree4" src="../static/images/treeA_1.png" alt="나무" />
-            <img class="tree5" src="../static/images/treeA_2.png" alt="나무" />
-            <img class="tree6" src="../static/images/treeB_1.png" alt="나무" />
-            <img class="tree7" src="../static/images/treeB_1.png" alt="나무" />
-            <img class="tree8" src="../static/images/treeA_2.png" alt="나무" />
-            <img class="tree9" src="../static/images/treeA_1.png" alt="나무" />
-            <img class="tree10" src="../static/images/treeA_1.png" alt="나무" />
+            <img class="tree" src="{% static 'images/treeA_1.png' %}" alt="나무" />
+            <img class="tree2" src="{% static 'images/treeB_2.png' %}" alt="나무" />
+            <img class="tree3" src="{% static 'images/treeA_1.png' %}" alt="나무" />
+            <img class="tree4" src="{% static 'images/treeA_1.png' %}" alt="나무" />
+            <img class="tree5" src="{% static 'images/treeA_2.png' %}" alt="나무" />
+            <img class="tree6" src="{% static 'images/treeB_1.png' %}" alt="나무" />
+            <img class="tree7" src="{% static 'images/treeB_1.png' %}" alt="나무" />
+            <img class="tree8" src="{% static 'images/treeA_2.png' %}" alt="나무" />
+            <img class="tree9" src="{% static 'images/treeA_1.png' %}" alt="나무" />
+            <img class="tree10" src="{% static 'images/treeA_1.png' %}" alt="나무" />
           </div>
         </section>
       </div>

@@ -13,13 +13,13 @@
   <body>
     <header>
       <div class="logo">
-        <a href="home.html"><img src="../static/images/logoK.png" alt="기븐 로고"/></a>
+        <a href="{% url 'given_home' %}"><img src="{% static 'images/logoK.png' %}" alt="기븐 로고"/></a>
       </div>
       <nav>
         <ul>
-          <li><a href="heart.html">마음으로 기부하기</a></li>
-          <li><a href="money.html">돈으로 기부하기</a></li>
-          <li><a href="mypage.html"><img src="../static/images/mypage.png" alt="마이페이지 아이콘"/></a></li>
+          <li><a href="{% url 'given_heart' %}">마음으로 기부하기</a></li>
+          <li><a href="{% url 'given_money' %}">돈으로 기부하기</a></li>
+          <li><a href="{% url 'given_mypage' %}"><img src="{% static 'images/mypage.png' %}" alt="마이페이지 아이콘"/></a></li>
         </ul>
       </nav>
     </header>
@@ -29,7 +29,7 @@
           <section class="intro_01">
             <h2>당신의 작은 손길이,</h2>
           </section>
-          <img src="../static/images/sprout.png" alt="새싹 일러스트" />
+          <img src="{% static 'images/sprout.png' %}" alt="새싹 일러스트" />
           <section class="intro_02">
             <h2>큰 희망을 심습니다.</h2>
           </section>
@@ -91,7 +91,7 @@
               </p>
             </section>
             <section class="square_img">
-              <img src="../static/images/earth.png" alt="지구 일러스트" />
+              <img src="{% static 'images/earth.png' %}" alt="지구 일러스트" />
             </section>
           </section>
           <section class="squarebehind">
@@ -106,7 +106,7 @@
               </p>
             </section>
             <section class="square2_img">
-              <img src="../static/images/forest.png" alt="숲 일러스트" />
+              <img src="{% static 'images/forest.png' %}" alt="숲 일러스트" />
             </section>
           </section>
         </section>

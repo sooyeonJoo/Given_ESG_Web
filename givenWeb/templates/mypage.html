@@ -4,23 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Given</title>
-    <link rel="stylesheet" href="../static/css/common.css">
-    <link rel="stylesheet" href="../static/css/main.css">
-    <link rel="stylesheet" href="../static/css/mypage.css">
-    <script src="../static/js/mypage.js"></script>
+{% load static %}
+    <link rel="stylesheet" href="{% static 'css/common.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/main.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/mypage.css' %}" />
+    <script src="{% static 'js/mypage.js' %}"></script>
 </head>
 <body>
     <header>
         <div class="logo">
-            <a href="home.html"><img src="../static/images/logoK.png" alt="기븐 로고"/></a>
-        </div>
-        <nav>
+            <a href="{% url 'given_home' %}"><img src="{% static 'images/logoK.png' %}" alt="기븐 로고"/></a>
+          </div>
+          <nav>
             <ul>
-                <li><a href="heart.html">마음으로 기부하기</a></li>
-                <li><a href="money.html">돈으로 기부하기</a></li>
-                <li><a href="mypage.html"><img src="../static/images/mypage.png" alt="마이페이지 아이콘"/></a></li>
+              <li><a href="{% url 'given_heart' %}">마음으로 기부하기</a></li>
+              <li><a href="{% url 'given_money' %}">돈으로 기부하기</a></li>
+              <li><a href="{% url 'given_mypage' %}"><img src="{% static 'images/mypage.png' %}" alt="마이페이지 아이콘"/></a></li>
             </ul>
-        </nav>
+          </nav>
     </header>
     <main>
         <div id="my">
@@ -35,7 +36,7 @@
             <section class="con">
                 <section class="profile">
                     <section class="profile_img">
-                        <img src="../static/images/profile.png" alt="프로필 아이콘"> 
+                        <img src="{% static 'images/profile.png'%}" alt="프로필 아이콘"> 
                     </section>
                     <section class="profile_txt">
                         <h2><strong>홍길동</strong> 님 안녕하세요.</h2>
@@ -67,7 +68,7 @@
                         <section class="file">
                             <section class="file_titlecon">
                                 <h2>목록명</h2>
-                                <img src="../static/images/arrow.png" alt="토글 버튼" class="toggle_btn">
+                                <img src="{% static 'images/arrow.png'%}" alt="토글 버튼" class="toggle_btn">
                             </section>    
                             <section class="file_cardcon">
                                 <section class="file_card">
@@ -87,7 +88,7 @@
                         <section class="file">
                             <section class="file_titlecon">
                                 <h2>목록명</h2>
-                                <img src="../static/images/arrow.png" alt="토글 버튼" class="toggle_btn">
+                                <img src="{% static 'images/arrow.png'%}" alt="토글 버튼" class="toggle_btn">
                             </section>    
                             <section class="file_cardcon">
                                 <section class="file_card">
@@ -107,7 +108,7 @@
                         <section class="file">
                             <section class="file_titlecon">
                                 <h2>목록명</h2>
-                                <img src="../static/images/arrow.png" alt="토글 버튼" class="toggle_btn">
+                                <img src="{% static 'images/arrow.png'%}" alt="토글 버튼" class="toggle_btn">
                             </section>    
                             <section class="file_cardcon">
                                 <section class="file_card">
