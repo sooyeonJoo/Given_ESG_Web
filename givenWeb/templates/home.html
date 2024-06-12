@@ -17,8 +17,8 @@
       </div>
       <nav>
         <ul>
-          <li><a href="{% url 'given_heart' %}">마음으로 기부하기</a></li>
-          <li><a href="{% url 'given_money' %}">돈으로 기부하기</a></li>
+          <li><a class="nav_heart" href="{% url 'given_heart' %}">마음으로 기부하기</a></li>
+          <li><a class="nav_money" href="{% url 'given_money' %}">돈으로 기부하기</a></li>
           <li><a href="{% url 'given_mypage' %}"><img src="{% static 'images/mypage.png' %}" alt="마이페이지 아이콘"/></a></li>
         </ul>
       </nav>
@@ -34,8 +34,35 @@
             <h2>큰 희망을 심습니다.</h2>
           </section>
         </section>
-        <section class="banner"></section>
+        
+        <section class="carousel">
+          <section class="carousel_wrap">
+            <section class="carousel_slide">
+              <img src="{% static 'images/캐러셀_푸른등대.png' %}" alt="추천 기부재단"/>
+            </section>
+            <section class="carousel_slide">
+              <img src="{% static 'images/캐러셀_세이브더칠드런.png' %}" alt="추천 기부재단"/>
+            </section>
+            <section class="carousel_slide">
+              <img src="{% static 'images/캐러셀_한국심장재단.png' %}" alt="추천 기부재단"/>
+            </section>
+          </section>
+          <section class="carousel_btn">
+            <button type="button" class="carousel_btnP">
+              <img src="{% static 'images/arrow.png' %}" alt="왼쪽 화살표"/>
+            </button>
+            <button type="button" class="carousel_btnN">
+              <img src="{% static 'images/arrow.png' %}" alt="오른쪽 화살표"/>
+            </button>
+          </section>
+          <section class="carousel_page">
+            <section class="carousel_circle"></section>
+            <section class="carousel_circle"></section>
+            <section class="carousel_circle"></section>
+          </section>
+        </section>
       </div>
+
       <div id="esg">
         <section id="esg_background"></section>
         <section class="esg_title ani">

@@ -17,9 +17,9 @@
       </div>
       <nav>
         <ul>
-          <li><a href="{% url 'given_heart' %}">마음으로 기부하기</a></li>
-          <li><a href="{% url 'given_money' %}">돈으로 기부하기</a></li>
-          <li><a href="{% url 'given_mypage' %}"><img src="{% static 'images/mypage.png' %}" alt="마이페이지 아이콘"/></a></li>
+          <li><a class="nav_heart" href="{% url 'given_heart' %}">마음으로 기부하기</a></li>
+          <li><a class="nav_money" href="{% url 'given_money' %}">돈으로 기부하기</a></li>
+          <li><a class="nav_mypage" href="{% url 'given_mypage' %}"><img src="{% static 'images/mypage.png' %}" alt="마이페이지 아이콘"/></a></li>
         </ul>
       </nav>
     </header>

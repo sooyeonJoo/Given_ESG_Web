@@ -121,9 +121,9 @@
 }
 
 .toggle_btn {
-  margin-top: 5px;
   width: 40px;
   cursor: pointer;
+  transform: rotate(90deg);
 }
 
 .rotate {
