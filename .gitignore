@@ -228,7 +228,8 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
-givenWeb/given/__pycache__/
-givenWeb/givenWeb/__pycache__/
+# Ignore __pycache__ directories and .pyc files
+**/__pycache__/
+*.pyc
 
 # End of https://www.toptal.com/developers/gitignore/api/windows,visualstudiocode,django,venv
