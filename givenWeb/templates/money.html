@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Given</title>
+  {% load static %}
+      <link rel="stylesheet" href="{% static 'css/common.css' %}" />
+      <link rel="stylesheet" href="{% static 'css/main.css' %}" />
+      <link rel="stylesheet" href="{% static 'css/money.css' %}" />
+      <script src="{% static 'js/money.js' %}"></script>
+  <script src="https://kit.fontawesome.com/94a4c2cbc6.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <a href="{% url 'given_home' %}"><img src="{% static 'images/logoK.png' %}" alt="기븐 로고"/></a>
+    </div>
+    <nav>
+      <ul>
+        <li><a class="nav_heart" href="{% url 'given_heart' %}">마음으로 기부하기</a></li>
+        <li><a class="nav_money" href="{% url 'given_money' %}">돈으로 기부하기</a></li>
+        <li><a href="{% url 'given_mypage' %}"><img src="{% static 'images/mypage.png' %}" alt="마이페이지 아이콘"/></a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <div class="intro">
+      <h1>돈으로 기부하기</h1>
+      <p>다양한 기부 단체들을 한 눈에 모아볼 수 있습니다.</p>
+    </div>
+    <div id="money_wrap">
+      <div class="filter">
+        <form class="search-box" action="" method="get">
+          <input class="search-txt" type="text" placeholder="검색어를 입력하세요.">
+          <button class="search-button" type="submit">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
+        </form>
+        <div class="type">
+          <li><p>모두보기 &ensp;|</p></li>
+          <li><button type="button" class="category all" data-filter="*">모두</button></li>
+        </div>
+        <div class="type">
+          <li><p>나라 &ensp;|</p></li>
+          <li><button type="button" class="category" data-filter="국내">국내</button></li>
+          <li><button type="button" class="category" data-filter="해외">해외</button></li>
+        </div>
+        <div class="type">
+          <li><p>대상 &ensp;|</p></li>
+          <li><button type="button" class="category" data-filter="아동">아동</button></li>
+          <li><button type="button" class="category" data-filter="청년">청년</button></li>
+          <li><button type="button" class="category" data-filter="여성">여성</button></li>
+          <li><button type="button" class="category" data-filter="노인">노인</button></li>
+          <li><button type="button" class="category" data-filter="환자">환자</button></li>
+          <li><button type="button" class="category" data-filter="장애인">장애인</button></li>
+        </div>
+        <div class="type">
+          <li><p>유형 &ensp;|</p></li>
+          <li><button type="button" class="category" data-filter="물품">물품</button></li>
+          <li><button type="button" class="category" data-filter="소액">소액</button></li>
+          <li><button type="button" class="category" data-filter="정기">정기</button></li>
+          <li><button type="button" class="category" data-filter="결연">결연</button></li>
+        </div>
+      </div>
+
+      <div class="money_list">
+        <div class ="card" onclick="openModal('modal1')">
+          <div class="pic">
+            <img src="{% static 'images/nowgive.png' %}" alt="사진">
+          </div>
+          <div class="txt">
+            <div class="title">
+            <p>곧장기부</p>
+            </div>
+            <div class="sub-title">
+            <p>1원도 빠짐없이 장바구니 100% 기부하기</p>
+            </div>
+            <div class="tag">
+              <li><button type="button" data-type="국내">국내</button></li>
+              <li><button type="button" data-type="아동">아동</button></li>
+              <li><button type="button" data-type="소액">소액</button></li>
+              <li><button type="button" data-type="정기">정기</button></li>
+            </div>
+          </div>
+        </div>
+
+        <div class ="card" onclick="openModal('modal2')">
+          <div class="pic">
+            <img src="{% static 'images/kakao1.png' %}" alt="사진">
+          </div>
+          <div class="txt">
+            <div class="title">
+              <p>카카오같이가치</p>
+            </div>
+            <div class="sub-title">
+            <p>같이 꾸는 꿈은 현실이 됩니다</p>
+            </div>
+            <div class="tag">
+              <li><button type="button" data-type="아동">아동</button></li>
+              <li><button type="button" data-type="노인">노인</button></li>
+              <li><button type="button" data-type="장애인">장애인</button></li>
+              <li><button type="button" data-type="소액">소액</button></li>
+            </div>
+          </div>
+        </div>
+
+        <div class ="card" onclick="openModal('modal3')">
+          <div class="pic">
+            <img src="{% static 'images/국경없는의사회.png' %}" alt="사진">
+          </div>
+          <div class="txt">
+            <div class="title">
+              <p>국경없는의사회</p>
+            </div>
+            <div class="sub-title">
+              <p>당신의 후원이 환자를 치료합니다</p>
+            </div>
+            <div class="tag">
+              <li><button type="button" data-type="해외">해외</button></li>
+              <li><button type="button" data-type="정기">정기</button></li>
+            </div>
+          </div>
+        </div>
+
+        <div class ="card" onclick="openModal('modal4')">
+          <div class="pic">
+            <img src="{% static 'images/초록우산.jpg' %}" alt="사진">
+          </div>
+          <div class="txt">
+            <div class="title">
+              <p>초록우산</p>
+            </div>
+            <div class="sub-title">
+              <p>언제나 어린이 곁에, 초록우산</p>
+            </div>
+            <div class="tag">
+              <li><button type="button" data-type="국내">국내</button></li>
+              <li><button type="button" data-type="해외">해외</button></li>
+              <li><button type="button" data-type="아동">아동</button></li>
+              <li><button type="button" data-type="정기">정기</button></li>
+              <li><button type="button" data-type="결연">결연</button></li>
+            </div>
+          </div>
+        </div>
+
+        <div class ="card" onclick="openModal('modal5')">
+          <div class="pic">
+            <img src="{% static 'images/아름다운가게.jpg' %}" alt="사진">
+          </div>
+          <div class="txt">
+            <div class="title">
+              <p>아름다운 가게</p>
+            </div>
+            <div class="sub-title">
+              <p>함께하는 나눔과 순환의 아름다운 세상 만들기</p>
+            </div>
+            <div class="tag">
+              <li><button type="button" data-type="국내">국내</button></li>
+              <li><button type="button" data-type="소액">소액</button></li>
+              <li><button type="button" data-type="물품">물품</button></li>
+            </div>
+          </div>
+        </div>
+
+        <div class ="card" onclick="openModal('modal6')">
+          <div class="pic">
+            <img src="{% static 'images/세이브더칠드런.jpg' %}" alt="사진">
+          </div>
+          <div class="txt">
+            <div class="title">
+              <p>세이브더칠드런</p>
+            </div>
+            <div class="sub-title">
+              <p>우리가 아이를 구하면, 아이가 세상을 구한다</p>
+            </div>
+            <div class="tag">
+              <li><button type="button" data-type="국내">국내</button></li>
+              <li><button type="button" data-type="해외">해외</button></li>
+              <li><button type="button" data-type="아동">아동</button></li>
+              <li><button type="button" data-type="정기">정기</button></li>
+            </div>
+          </div>
+        </div>
+
+        <div class ="card" onclick="openModal('modal7')">
+          <div class="pic">
+            <img src="{% static 'images/월드비전.jpg' %}" alt="사진">
+          </div>
+          <div class="txt">
+            <div class="title">
+              <p>월드비전</p>
+            </div>
+            <div class="sub-title">
+              <p>모든 어린이가 풍성한 삶을 누리는 것</p>
+            </div>
+            <div class="tag">
+              <li><button type="button" data-type="국내">국내</button></li>
+              <li><button type="button" data-type="해외">해외</button></li>
+              <li><button type="button" data-type="아동">아동</button></li>
+              <li><button type="button" data-type="정기">정기</button></li>
+            </div>
+          </div>
+        </div>
+
+        <div class ="card" onclick="openModal('modal8')">
+          <div class="pic">
+            <img src="{% static 'images/푸른등대.jpg' %}" alt="사진">
+          </div>
+          <div class="txt">
+            <div class="title">
+              <p>한국장학재단 푸른등대</p>
+            </div>
+            <div class="sub-title">
+              <p>대한민국 청년의 꿈을 비추는 기부</p>
+            </div>
+            <div class="tag">
+              <li><button type="button" data-type="국내">국내</button></li>
+              <li><button type="button" data-type="청년">청년</button></li>
+              <li><button type="button" data-type="정기">정기</button></li>
+            </div>
+          </div>
+        </div>
+
+        <div class ="card" onclick="openModal('modal9')">
+          <div class="pic">
+            <img src="{% static 'images/위스타트.jpg' %}" alt="사진">
+          </div>
+          <div class="txt">
+            <div class="title">
+              <p>위스타트</p>
+            </div>
+            <div class="sub-title">
+              <p>어린이가 행복한 세상</p>
+            </div>
+            <div class="tag">
+              <li><button type="button" data-type="국내">국내</button></li>
+              <li><button type="button" data-type="아동">아동</button></li>
+              <li><button type="button" data-type="정기">정기</button></li>
+              <li><button type="button" data-type="물품">물품</button></li>
+            </div>
+          </div>
+        </div>
+
+        <div class ="card" onclick="openModal('modal10')">
+          <div class="pic">
+            <img src="{% static 'images/지파운데이션.jpg' %}" alt="사진">
+          </div>
+          <div class="txt">
+            <div class="title">
+              <p>지파운데이션</p>
+            </div>
+            <div class="sub-title">
+              <p>사람이 소중합니다</p>
+            </div>
+            <div class="tag">
+              <li><button type="button" data-type="국내">국내</button></li>
+              <li><button type="button" data-type="해외">해외</button></li>
+              <li><button type="button" data-type="아동">아동</button></li>
+              <li><button type="button" data-type="여성">여성</button></li>
+              <li><button type="button" data-type="결연">결연</button></li>
+            </div>
+          </div>
+        </div>
+        
+        <div class ="card" onclick="openModal('modal11')">
+          <div class="pic">
+            <img src="{% static 'images/아이들과미래재단.jpg' %}" alt="사진">
+          </div>
+          <div class="txt">
+            <div class="title">
+              <p>아이들과미래재단</p>
+            </div>
+            <div class="sub-title">
+              <p>아이들은 우리의 미래입니다</p>
+            </div>
+            <div class="tag">
+              <li><button type="button" data-type="국내">국내</button></li>
+              <li><button type="button" data-type="해외">해외</button></li>
+              <li><button type="button" data-type="아동">아동</button></li>
+              <li><button type="button" data-type="정기">정기</button></li>
+            </div>
+          </div>
+        </div>
+
+        <div class ="card" onclick="openModal('modal12')">
+          <div class="pic">
+            <img src="{% static 'images/한국심장재단.jpg' %}" alt="사진">
+          </div>
+          <div class="txt">
+            <div class="title">
+              <p>한국심장재단</p>
+            </div>
+            <div class="sub-title">
+              <p>건강하고 행복한 삶을 살 수 있도록</p>
+            </div>
+            <div class="tag">
+              <li><button type="button" data-type="국내">국내</button></li>
+              <li><button type="button" data-type="아동">환자</button></li>
+              <li><button type="button" data-type="결연">정기</button></li>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> 
+  </main>
+  <footer>
+      
+  </footer>
+
+
+  <!--      모달 모음        -->
+  <div id="modal1" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('modal1')">&times;</span> <!--X표시-->
+      <div class="modal-title">
+        <h1>곧장기부</h1>
+      </div>
+      <div class="modal-link">
+        <a href="https://thedirectdonation.org/">기부하러 가기</a>
+      </div>
+      <div class="modal-image">
+        <img src="{% static 'images/nowgive.png' %}">
+        <img src="{% static 'images/nowgive2.png' %}">
+      </div>
+      <div class="modal-txt">
+        <h2>- 아이들에게</h2>
+        <p>여러분의 기부금은 아이들에게 필요한 물건을 사는 데에만 사용되고, 
+          그 물건들은 지역아동센터로 배송되어 아이들을 위해 사용됩니다. 
+          기부금이 현금 그대로 전달될 때보다, 어떻게 아이들에게 쓰였는지 보다 확실하게 알 수 있습니다. 
+          보다 진솔한 기부를 위해 아이들의 얼굴 노출을 지양합니다.
+        </p>
+        <br>
+        <h2>- 장바구니에게</h2>
+        <p>
+          여러분의 기부금은 아이들에게 필요한 물건을 사는 데에만 사용되고, 
+          그 물건들은 지역아동센터로 배송되어 아이들을 위해 사용됩니다. 
+          기부금이 현금 그대로 전달될 때보다, 어떻게 아이들에게 쓰였는지 보다 확실하게 알 수 있습니다. 
+          보다 진솔한 기부를 위해 아이들의 얼굴 노출을 지양합니다.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div id="modal2" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('modal2')">&times;</span> <!--X표시-->
+      <div class="modal-title">
+        <h1>카카오같이가치</h1>
+      </div>
+      <div class="modal-link">
+        <a href="https://together.kakao.com/">기부하러 가기</a>
+      </div>
+      <div class="modal-image">
+        <img src="{% static 'images/kakao1.png' %}">
+        <img src="{% static 'images/kakao2.png' %}">
+      </div>
+      <div class="modal-txt">
+        <h2>- 같이기부</h2>
+        <p>
+          응원이나 공유만 해도 카카오가 대신 기부합니다.
+          신뢰할 수 있는 파트너들과 함께 변화를 만듭니다.
+        </p>
+        <br>
+        <h2>- 모두의 행동</h2>
+        <p>
+          우리 사회가 함께 해결해야 할 다양한 주제들을
+          같이 고민하고 함께 행동해보아요.
+        </p>
+        <br>
+        <h2>- 마음날씨</h2>
+        <p>
+          모두의 행복을 연구하는 마음날씨
+          오늘 당신의 마음에 안부를 묻습니다.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div id="modal3" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('modal3')">&times;</span> <!--X표시-->
+      <div class="modal-title">
+        <h1>국경없는의사회</h1>
+      </div>
+      <div class="modal-link">
+        <a href="https://msf.or.kr/">기부하러 가기</a>
+      </div>
+      <div class="modal-image">
+        <img src="{% static 'images/국경없는의사회.png' %}">
+      </div>
+      <div class="modal-txt">
+        <h2>- 활동 운영</h2>
+        <p>
+          국경없는의사회는 인종이나 종교, 성별, 정치적 성향에 관계 없이 오로지 사람들의 필요에만 기반해 지원을 제공합니다. 
+          국경없는의사회는 심각한 수준의 폭력, 주목 받지 못하는 위기, 
+          인도주의 활동을 방해하는 장애물을 목격했을 때, 이에 대해서 목소리를 높입니다.
+        </p>
+        <br>
+        <h2>- 활동 분야</h2>
+        <p>
+          국경없는의사회는 국제 인도주의 의료 구호 단체로 의료 지원을 받지 못하거나 
+          무력 분쟁, 전염성 질병, 영양실조, 자연재해 등으로 고통 받는 사람들을 위한 긴급 구호 활동을 하고 있습니다.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div id="modal4" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('modal4')">&times;</span> <!--X표시-->
+      <div class="modal-title">
+        <h1>초록우산</h1>
+      </div>
+      <div class="modal-link">
+        <a href="https://www.childfund.or.kr/main.do">기부하러 가기</a>
+      </div>
+      <div class="modal-image">
+        <img src="{% static 'images/초록우산.jpg' %}">
+        <img src="{% static 'images/초록우산2.png' %}">
+      </div>
+      <div class="modal-txt">
+        <h2>- 초록우산</h2>
+        <p>
+          아이들을 위해 존재하고 후원자가 있기에 성장합니다.
+          초록우산은 1948년부터 어린이들의 행복한 성장을 위해 언제나 어린이 곁에서 함께하는 아동복지전문기관입니다.
+          1948년 문을 연 초록우산은 전쟁고아 구호사업을 시작으로 1981년 민간 최초로 전국 불우아동결연사업을 운영하며 국내 아동복지를 선도해 왔습니다. 
+          1989년에는 국내 최초로 한국아동학대예방협회를 창립하여 아동학대 예방사업을 시작했으며, 2011년 아동 NPO최초로 아동복지연구소를 설립하고 
+          아동 친화적인 환경조성을 위한 전문적인 연구조사를 진행하고 있습니다.
+          어린이의 행복한 성장을 위해 돌봄, 자립, 교육, 건강 · 안전, 주거 등의 영역에서 복지사업을 강화해가고 있으며, 
+          법/제도 및 인식개선 캠페인 등 다양한 옹호활동을 통해 어린이의 권리가 보호, 존중, 실현되는 세상을 만들어 가기 위한 노력을 하고 있습니다.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div id="modal5" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('modal5')">&times;</span> <!--X표시-->
+      <div class="modal-title">
+        <h1>아름다운 가게</h1>
+      </div>
+      <div class="modal-link">
+        <a href="https://www.beautifulstore.org/">기부하러 가기</a>
+      </div>
+      <div class="modal-image">
+        <img src="{% static 'images/아름다운가게.jpg' %}">
+        <img src="{% static 'images/아름다운가게2.png' %}">
+      </div>
+      <div class="modal-txt">
+        <h2>- 재사용 나눔가게</h2>
+        <p>
+          아름다운가게 재사용나눔가게는 시민 여러분과 함께 생활 속에서 자원 재순환과 나눔을 실천하기 위해 탄생한 공간입니다. 
+          2002년 1호점인 아름다운가게 안국점을 시작으로 현재 전국 16개 도시에 110여 개의 재사용나눔가게와 함께하고 있습니다. 
+          재사용나눔가게는 우리 사회의 아름다운 변화를 만들어내고자 하는 지역민들의 사랑방입니다.
+        </p>
+        <br>
+        <h2>- 업사이클링</h2>
+        <p>
+          '에코파티메아리'는 쓰임을 다한 소재에 새로운 쓰임을 더한 업사이클 디자인 브랜드로 기부되어 오는 ‘버려지는 것’들 중 
+          가죽, 의류, 기타 친환경적인 소재들을 발굴해 새로운 쓰임을 디자인하여 실용 적인 패션잡화 및 친환경 캠페인 제품들을 만듭니다.
+          이로 인해 환경에 대한 사람들의 관심을 유발하고 지구를 지키는 에코라이프스타일의 확산을 추구합니다.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div id="modal6" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('modal6')">&times;</span> <!--X표시-->
+      <div class="modal-title">
+        <h1>세이브더칠드런</h1>
+      </div>
+      <div class="modal-link">
+        <a href="https://www.sc.or.kr/">기부하러 가기</a>
+      </div>
+      <div class="modal-image">
+        <img src="{% static 'images/세이브더칠드런.jpg' %}">
+        <img src="{% static 'images/세이브더칠드런2.png' %}">
+      </div>
+      <div class="modal-txt">
+        <h2>- 최초, 최고의 국제아동권리NGO</h2>
+        <p>
+          1919년 설립된 세이브더칠드런은 제1차 세계대전 이후 굶주리던
+          패전국의 아이들을 구하기 위해 세계 최초로 아동 구호 활동을 시작했습니다.
+          오늘날 전 세계 약 120여개 국가에서 2만 5천여명의 직원들은
+          아동이 건강하게 성장하고, 위험한 환경으로부터 보호받으며,
+          어떤 상황에서도 교육받을 수 있도록 지원하고 있습니다.
+          우리 사회가 아동의 목소리에 귀 기울이고, 존중하는 사회가 되도록
+          아동의 권리 옹호 활동을 펼치고 있습니다.
+        </p>
+        <br>
+        <h2>- 인도주의 전문가</h2>
+        <p>
+          세이브더칠드런에게는 단 한 가지의 목적이 있습니다. 한 명의 아이라도 더 구하는 것입니다.
+          세이브더칠드런에게는 단 한 가지의 원칙이 있습니다. 그 아이가 어느 나라 아이이건, 어떤 종교를 가졌건 상관없이 구해야 한다는 것입니다.
+          세이브더칠드런은 종교, 인종, 국가, 정치적 이념을 초월하여 아동의 생존과 권리를 위해 세워진 세계 최초의 아동권리 NGO 입니다.
+        </p>
+        <br>
+        <h2>- 5대 사업영역</h2>
+        <p>
+          1. 생존 - 모든 아동은 건강하게 태어나고 자라날 권리가 있습니다.
+          2. 보호 - 모든 아동은 안전하게 보호받을 권리가 있습니다.
+          3. 교육 - 모든 아동은 교육을 받을 권리가 있습니다.
+          4. 권리옹호 - 모든 아동은 잠재력을 펼칠 권리가 있습니다.
+          5. 긴급구호 - 모든 아동은 인도적 위기 상황에서 보호받고 일상을 회복할 권리가 있습니다.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div id="modal7" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('modal7')">&times;</span> <!--X표시-->
+      <div class="modal-title">
+        <h1>월드비전</h1>
+      </div>
+      <div class="modal-link">
+        <a href="https://www.worldvision.or.kr/">기부하러 가기</a>
+      </div>
+      <div class="modal-image">
+        <img src="{% static 'images/월드비전.jpg' %}">
+        <img src="{% static 'images/월드비전2.png' %}">
+      </div>
+      <div class="modal-txt">
+        <h2>- 초록우산</h2>
+        <p>
+          아이들을 위해 존재하고 후원자가 있기에 성장합니다.
+          초록우산은 1948년부터 어린이들의 행복한 성장을 위해 언제나 어린이 곁에서 함께하는 아동복지전문기관입니다.
+          1948년 문을 연 초록우산은 전쟁고아 구호사업을 시작으로 1981년 민간 최초로 전국 불우아동결연사업을 운영하며 국내 아동복지를 선도해 왔습니다. 
+          1989년에는 국내 최초로 한국아동학대예방협회를 창립하여 아동학대 예방사업을 시작했으며, 2011년 아동 NPO최초로 아동복지연구소를 설립하고 
+          아동 친화적인 환경조성을 위한 전문적인 연구조사를 진행하고 있습니다.
+          어린이의 행복한 성장을 위해 돌봄, 자립, 교육, 건강 · 안전, 주거 등의 영역에서 복지사업을 강화해가고 있으며, 
+          법/제도 및 인식개선 캠페인 등 다양한 옹호활동을 통해 어린이의 권리가 보호, 존중, 실현되는 세상을 만들어 가기 위한 노력을 하고 있습니다.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div id="modal8" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('modal8')">&times;</span> <!--X표시-->
+      <div class="modal-title">
+        <h1>한국장학재단 푸른등대</h1>
+      </div>
+      <div class="modal-link">
+        <a href="https://portal.kosaf.go.kr/CO/jspAction.do">기부하러 가기</a>
+      </div>
+      <div class="modal-image">
+        <img src="{% static 'images/푸른등대.jpg' %}">
+        <img src="{% static 'images/푸른등대2.png' %}">
+      </div>
+      <div class="modal-txt">
+        <h2>- 초록우산</h2>
+        <p>
+          아이들을 위해 존재하고 후원자가 있기에 성장합니다.
+          초록우산은 1948년부터 어린이들의 행복한 성장을 위해 언제나 어린이 곁에서 함께하는 아동복지전문기관입니다.
+          1948년 문을 연 초록우산은 전쟁고아 구호사업을 시작으로 1981년 민간 최초로 전국 불우아동결연사업을 운영하며 국내 아동복지를 선도해 왔습니다. 
+          1989년에는 국내 최초로 한국아동학대예방협회를 창립하여 아동학대 예방사업을 시작했으며, 2011년 아동 NPO최초로 아동복지연구소를 설립하고 
+          아동 친화적인 환경조성을 위한 전문적인 연구조사를 진행하고 있습니다.
+          어린이의 행복한 성장을 위해 돌봄, 자립, 교육, 건강 · 안전, 주거 등의 영역에서 복지사업을 강화해가고 있으며, 
+          법/제도 및 인식개선 캠페인 등 다양한 옹호활동을 통해 어린이의 권리가 보호, 존중, 실현되는 세상을 만들어 가기 위한 노력을 하고 있습니다.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div id="modal9" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('modal9')">&times;</span> <!--X표시-->
+      <div class="modal-title">
+        <h1>위스타트</h1>
+      </div>
+      <div class="modal-link">
+        <a href="https://westart.or.kr/">기부하러 가기</a>
+      </div>
+      <div class="modal-image">
+        <img src="{% static 'images/위스타트.jpg' %}">
+        <img src="{% static 'images/위스타트2.png' %}">
+      </div>
+      <div class="modal-txt">
+        <h2>- 초록우산</h2>
+        <p>
+          아이들을 위해 존재하고 후원자가 있기에 성장합니다.
+          초록우산은 1948년부터 어린이들의 행복한 성장을 위해 언제나 어린이 곁에서 함께하는 아동복지전문기관입니다.
+          1948년 문을 연 초록우산은 전쟁고아 구호사업을 시작으로 1981년 민간 최초로 전국 불우아동결연사업을 운영하며 국내 아동복지를 선도해 왔습니다. 
+          1989년에는 국내 최초로 한국아동학대예방협회를 창립하여 아동학대 예방사업을 시작했으며, 2011년 아동 NPO최초로 아동복지연구소를 설립하고 
+          아동 친화적인 환경조성을 위한 전문적인 연구조사를 진행하고 있습니다.
+          어린이의 행복한 성장을 위해 돌봄, 자립, 교육, 건강 · 안전, 주거 등의 영역에서 복지사업을 강화해가고 있으며, 
+          법/제도 및 인식개선 캠페인 등 다양한 옹호활동을 통해 어린이의 권리가 보호, 존중, 실현되는 세상을 만들어 가기 위한 노력을 하고 있습니다.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div id="modal10" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('modal10')">&times;</span> <!--X표시-->
+      <div class="modal-title">
+        <h1>지파운데이션</h1>
+      </div>
+      <div class="modal-link">
+        <a href="https://gfound.org/">기부하러 가기</a>
+      </div>
+      <div class="modal-image">
+        <img src="{% static 'images/지파운데이션.jpg' %}">
+        <img src="{% static 'images/지파운데이션2.png' %}">
+      </div>
+      <div class="modal-txt">
+        <h2>- 초록우산</h2>
+        <p>
+          아이들을 위해 존재하고 후원자가 있기에 성장합니다.
+          초록우산은 1948년부터 어린이들의 행복한 성장을 위해 언제나 어린이 곁에서 함께하는 아동복지전문기관입니다.
+          1948년 문을 연 초록우산은 전쟁고아 구호사업을 시작으로 1981년 민간 최초로 전국 불우아동결연사업을 운영하며 국내 아동복지를 선도해 왔습니다. 
+          1989년에는 국내 최초로 한국아동학대예방협회를 창립하여 아동학대 예방사업을 시작했으며, 2011년 아동 NPO최초로 아동복지연구소를 설립하고 
+          아동 친화적인 환경조성을 위한 전문적인 연구조사를 진행하고 있습니다.
+          어린이의 행복한 성장을 위해 돌봄, 자립, 교육, 건강 · 안전, 주거 등의 영역에서 복지사업을 강화해가고 있으며, 
+          법/제도 및 인식개선 캠페인 등 다양한 옹호활동을 통해 어린이의 권리가 보호, 존중, 실현되는 세상을 만들어 가기 위한 노력을 하고 있습니다.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div id="modal11" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('modal11')">&times;</span> <!--X표시-->
+      <div class="modal-title">
+        <h1>아이들과미래재단</h1>
+      </div>
+      <div class="modal-link">
+        <a href="https://www.kidsfuture.or.kr/">기부하러 가기</a>
+      </div>
+      <div class="modal-image">
+        <img src="{% static 'images/아이들과미래재단.jpg' %}">
+        <img src="{% static 'images/아이들과미래재단2.png' %}">
+      </div>
+      <div class="modal-txt">
+        <h2>- 초록우산</h2>
+        <p>
+          아이들을 위해 존재하고 후원자가 있기에 성장합니다.
+          초록우산은 1948년부터 어린이들의 행복한 성장을 위해 언제나 어린이 곁에서 함께하는 아동복지전문기관입니다.
+          1948년 문을 연 초록우산은 전쟁고아 구호사업을 시작으로 1981년 민간 최초로 전국 불우아동결연사업을 운영하며 국내 아동복지를 선도해 왔습니다. 
+          1989년에는 국내 최초로 한국아동학대예방협회를 창립하여 아동학대 예방사업을 시작했으며, 2011년 아동 NPO최초로 아동복지연구소를 설립하고 
+          아동 친화적인 환경조성을 위한 전문적인 연구조사를 진행하고 있습니다.
+          어린이의 행복한 성장을 위해 돌봄, 자립, 교육, 건강 · 안전, 주거 등의 영역에서 복지사업을 강화해가고 있으며, 
+          법/제도 및 인식개선 캠페인 등 다양한 옹호활동을 통해 어린이의 권리가 보호, 존중, 실현되는 세상을 만들어 가기 위한 노력을 하고 있습니다.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div id="modal12" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('modal12')">&times;</span> <!--X표시-->
+      <div class="modal-title">
+        <h1>한국심장재단</h1>
+      </div>
+      <div class="modal-link">
+        <a href="https://www.heart.or.kr/">기부하러 가기</a>
+      </div>
+      <div class="modal-image">
+        <img src="{% static 'images/한국심장재단.jpg' %}">
+        <img src="{% static 'images/한국심장재단2.png' %}">
+      </div>
+      <div class="modal-txt">
+        <h2>- 초록우산</h2>
+        <p>
+          아이들을 위해 존재하고 후원자가 있기에 성장합니다.
+          초록우산은 1948년부터 어린이들의 행복한 성장을 위해 언제나 어린이 곁에서 함께하는 아동복지전문기관입니다.
+          1948년 문을 연 초록우산은 전쟁고아 구호사업을 시작으로 1981년 민간 최초로 전국 불우아동결연사업을 운영하며 국내 아동복지를 선도해 왔습니다. 
+          1989년에는 국내 최초로 한국아동학대예방협회를 창립하여 아동학대 예방사업을 시작했으며, 2011년 아동 NPO최초로 아동복지연구소를 설립하고 
+          아동 친화적인 환경조성을 위한 전문적인 연구조사를 진행하고 있습니다.
+          어린이의 행복한 성장을 위해 돌봄, 자립, 교육, 건강 · 안전, 주거 등의 영역에서 복지사업을 강화해가고 있으며, 
+          법/제도 및 인식개선 캠페인 등 다양한 옹호활동을 통해 어린이의 권리가 보호, 존중, 실현되는 세상을 만들어 가기 위한 노력을 하고 있습니다.
+        </p>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

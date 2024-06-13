@@ -1,3 +1,7 @@
+.nav_heart {
+  color: var(--color-gr1);
+}
+
 #intro {
   display: flex;
   flex-direction: column;
