@@ -42,14 +42,14 @@
           </div>
 
           <div class="input">
-            <textarea
-              id="messageInput"
-              placeholder="댓글을 입력해 주세요."
-            ></textarea>
+            <textarea id="messageInput"placeholder="댓글을 입력해 주세요."></textarea>
             <button id="sendButton">전송</button>
           </div>
         </div>
         <section class="tree_img">
+          <div class="comment-box">
+            오늘의 댓글: <span id="commentCount">0</span>
+          </div>
           <img
             class="earth_half"
             src="{% static 'images/earth_half.png' %}"

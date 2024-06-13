@@ -230,3 +230,16 @@
   position: absolute;
   z-index: 1;
 }
+
+
+.comment-box {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  border: 2px solid var(--color-br1);
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-size: 25px;
+  font-weight: bold;
+  z-index: 4;
+}
