@@ -61,10 +61,10 @@ document.addEventListener("DOMContentLoaded", function() {
   prevBtn.addEventListener('click', prevSlide);
   nextBtn.addEventListener('click', nextSlide);
 
-  setInterval(nextSlide, 5000); // 5초마다 자동 슬라이드 이동
+  setInterval(nextSlide, 5000); //5초마다 자동 슬라이드 이동
 
   updateCircleIndicator(); //초기 인디케이터 상태 업데이트
-  circles.forEach((circle, index) => { // 인디케이터 동그라미 클릭 시 해당 슬라이드로 이동
+  circles.forEach((circle, index) => { //인디케이터 동그라미 클릭 시 해당 슬라이드로 이동
     circle.addEventListener('click', () => {
       goToSlide(index);
     });

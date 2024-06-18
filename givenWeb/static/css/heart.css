@@ -41,10 +41,11 @@
 .message_wrap .message_header {
   background-color: var(--color-gr2);
   border-radius: 20px 20px 0 0;
-  height: 50px;
+  margin-bottom: 20px;
+  height: 60px;
   text-align: center;
   align-content: center;
-  font-size: 22px; 
+  font-size: 25px; 
   font-weight: bold;
 }
 
@@ -53,8 +54,10 @@
 .message_wrap .chat ul li { width : 100% }
 .message_wrap .chat ul li.left { text-align: left; }
 .message_wrap .chat ul li.right { text-align: right; }
-
-.message_wrap .chat ul li > div { font-size: 13px;}
+.message_wrap .chat ul li > div { 
+  font-family: "Noto Sans KR", sans-serif;;
+  font-size: 14px;
+}
 .message_wrap .chat ul li > div.sender { 
   margin: 10px 20px 0 20px; 
   font-weight: bold; 
@@ -62,19 +65,19 @@
 .message_wrap .chat ul li > div.message { 
   display: inline-block; 
   word-break: break-all; 
-  margin: 5px 20px; 
-  max-width: 75%; 
-  border:1px solid #888; 
+  margin: 6px 20px; 
+  border: 1px solid #888888; 
   padding: 10px; 
   border-radius: 5px; 
   background-color: #FCFCFC; 
-  color: #555; 
+  color: #555555; 
   text-align:left; 
 }
 
 .message_wrap .chat {
   overflow-y: auto; /* 세로 스크롤이 필요한 경우 스크롤바 표시 */
-  max-height: 600px; 
+  height: 515px; 
+  border-bottom: 1.5px solid var(--color-gr2); 
 }
 
 .message_wrap .input { 
@@ -85,26 +88,44 @@
   padding: 10px; 
   box-sizing: border-box; 
   text-align: center; 
-  border-top: 1px solid var(--color-pi); 
+  display: flex;
 }
+
 .message_wrap .input > textarea { 
   width: calc(100% - 50px); 
+  width: 350px;
   height: 80px; 
   border:none; 
   box-sizing: border-box; 
 }
 
-.input{
-  display: flex;
-  flex-direction: row;
-}
-
 #sendButton {
-  border-radius: 20px;
+  background-color: var(--color-gr2);
+  border-radius: 30px;
+  margin-top: 30px;
   margin-left: 10px;
+  width: 70px;
+  height: 50px;
   cursor: pointer; /* 마우스 커서 포인터 모양 */
+  font-family: "Nanum DaHaengCe", sans-serif;
+  font-weight: bold;
+  font-size: 20px;
 }
 
+.comment-box {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  height: 60px;
+  text-align: center;
+  align-content: center;
+  border: 2px solid var(--color-br1);
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-size: 25px;
+  font-weight: bold;
+  z-index: 4;
+}
 
 .format {display:none;}
 
@@ -113,7 +134,6 @@
 }
 
 .tree_img {
-  /* border: 2px solid var(--color-br1); */
   margin-left: 50px;
   width: 700px;
   height: 700px;
@@ -229,17 +249,4 @@
   left: 60px;
   position: absolute;
   z-index: 1;
-}
-
-
-.comment-box {
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  border: 2px solid var(--color-br1);
-  padding: 10px 20px;
-  border-radius: 10px;
-  font-size: 25px;
-  font-weight: bold;
-  z-index: 4;
 }
